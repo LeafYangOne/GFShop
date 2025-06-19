@@ -1,0 +1,80 @@
+2025-06-17 14:47:10.268 [DEBU] {883a58a7a1c149181f72723b5ec53f0a} [ 14 ms] [default] [rows:0  ] [txid:1] BEGIN
+2025-06-17 14:47:10.279 [DEBU] {883a58a7a1c149181f72723b5ec53f0a} [ 10 ms] [default] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2025-06-17 14:47:10.283 [DEBU] {883a58a7a1c149181f72723b5ec53f0a} [  4 ms] [default] [rows:0  ] [txid:1] DELETE FROM `rotation_info` WHERE `id`=5
+2025-06-17 14:47:10.286 [DEBU] {883a58a7a1c149181f72723b5ec53f0a} [  1 ms] [default] [rows:0  ] [txid:1] COMMIT
+2025-06-17 14:47:23.592 [DEBU] {d07976c2a4c149182072723b88adbb60} [  1 ms] [default] [rows:0  ] [txid:2] BEGIN
+2025-06-17 14:47:23.594 [DEBU] {d07976c2a4c149182072723b88adbb60} [  2 ms] [default] [rows:1  ] [txid:2] DELETE FROM `rotation_info` WHERE `id`=8
+2025-06-17 14:47:23.597 [DEBU] {d07976c2a4c149182072723b88adbb60} [  3 ms] [default] [rows:0  ] [txid:2] COMMIT
+2025-06-17 15:53:49.529 [DEBU] {783752ce44c5491869e1443c59130a50} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2025-06-17 15:53:49.533 [DEBU] {783752ce44c5491869e1443c59130a50} [  3 ms] [default] [rows:1  ] INSERT INTO `rotation_info`(`created_at`,`pic_url`,`updated_at`,`link`,`sort`) VALUES('2025-06-17 15:53:49','abcdefg','2025-06-17 15:53:49','https://articles.zsxq.com/id_u3ociti50g3l.html',1) 
+2025-06-17 15:55:39.893 [DEBU] {c037ed805ec549186ae1443c715fbe6f} [  2 ms] [default] [rows:0  ] [txid:1] BEGIN
+2025-06-17 15:55:39.895 [ERRO] {c037ed805ec549186ae1443c715fbe6f} [  2 ms] [default] [rows:0  ] [txid:1] UPDATE `rotation_info` SET `updated_at`='2025-06-17 15:55:39',`link`='12345',`sort`=6666,`pic_url`='http:' WHERE (`id`=9) AND `deleted_at` IS NULL
+Error: Error 1264 (22003): Out of range value for column 'sort' at row 1
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/database/gdb/gdb_core_underlying.go:277
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoUpdate
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/database/gdb/gdb_core.go:611
+5.  github.com/gogf/gf/v2/database/gdb.(*HookUpdateInput).Next
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/database/gdb/gdb_model_hook.go:138
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).Update
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/database/gdb/gdb_model_update.go:97
+7.  GFShop/internal/logic/rotation.(*sRotation).Update.func1
+    /Users/yz/CS/Code/Go/GFShop/internal/logic/rotation/rotation.go:61
+8.  github.com/gogf/gf/v2/database/gdb.(*Core).Transaction
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/database/gdb/gdb_core_transaction.go:108
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).Transaction
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/database/gdb/gdb_model_transaction.go:27
+10. GFShop/internal/dao/internal.(*RotationInfoDao).Transaction
+    /Users/yz/CS/Code/Go/GFShop/internal/dao/internal/rotation_info.go:84
+11. GFShop/internal/logic/rotation.(*sRotation).Update
+    /Users/yz/CS/Code/Go/GFShop/internal/logic/rotation/rotation.go:51
+12. GFShop/internal/controller.(*cRotation).Update
+    /Users/yz/CS/Code/Go/GFShop/internal/controller/rotation.go:35
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.(*middleware).callHandlerFunc.6
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:152
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_func.go:55
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:129
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:75
+17. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/util/gutil/gutil.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:49
+19. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_middleware_handler_response.go:25
+20. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:55
+21. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_func.go:55
+22. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:54
+23. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/util/gutil/gutil.go:56
+24. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:49
+25. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_middleware_tracing.go:78
+26. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:96
+27. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_func.go:55
+28. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:95
+29. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/util/gutil/gutil.go:56
+30. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_request_middleware.go:49
+31. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/yz/CS/Env/go/pkg/mod/github.com/gogf/gf/v2@v2.2.1/net/ghttp/ghttp_server_handler.go:121
+
+2025-06-17 15:55:39.898 [DEBU] {c037ed805ec549186ae1443c715fbe6f} [  0 ms] [default] [rows:0  ] [txid:1] ROLLBACK
+2025-06-17 15:56:03.283 [DEBU] {a81b27f363c549186be1443c80f48cea} [  1 ms] [default] [rows:0  ] [txid:2] BEGIN
+2025-06-17 15:56:03.284 [DEBU] {a81b27f363c549186be1443c80f48cea} [  1 ms] [default] [rows:1  ] [txid:2] UPDATE `rotation_info` SET `sort`=1,`pic_url`='http:',`updated_at`='2025-06-17 15:56:03',`link`='12345' WHERE (`id`=9) AND `deleted_at` IS NULL
+2025-06-17 15:56:03.287 [DEBU] {a81b27f363c549186be1443c80f48cea} [  2 ms] [default] [rows:0  ] [txid:2] COMMIT

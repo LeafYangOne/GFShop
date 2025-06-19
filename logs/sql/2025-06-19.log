@@ -1,0 +1,36 @@
+2025-06-19 14:44:29.388 [DEBU] {5835be52a55e4a18d1fa1070b3b6c45a} [ 49 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2025-06-19 14:44:29.390 [DEBU] {5835be52a55e4a18d1fa1070b3b6c45a} [  1 ms] [default] [rows:2  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 14:44:29.391 [DEBU] {5835be52a55e4a18d1fa1070b3b6c45a} [  1 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2025-06-19 14:44:29.391 [DEBU] {5835be52a55e4a18d1fa1070b3b6c45a} [  0 ms] [default] [rows:2  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 14:47:11.125 [DEBU] {989471fdca5e4a18112b4227a3b8bb78} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2025-06-19 14:47:11.126 [DEBU] {989471fdca5e4a18112b4227a3b8bb78} [  1 ms] [default] [rows:2  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 14:47:11.127 [DEBU] {989471fdca5e4a18112b4227a3b8bb78} [  0 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2025-06-19 14:47:11.129 [DEBU] {989471fdca5e4a18112b4227a3b8bb78} [  1 ms] [default] [rows:2  ] SELECT * FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 14:50:55.034 [DEBU] {505dc21fff5e4a18f00f22720141c091} [  4 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2025-06-19 14:50:55.035 [DEBU] {505dc21fff5e4a18f00f22720141c091} [  1 ms] [default] [rows:2  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 14:50:55.036 [DEBU] {505dc21fff5e4a18f00f22720141c091} [  1 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2025-06-19 14:50:55.036 [DEBU] {505dc21fff5e4a18f00f22720141c091} [  0 ms] [default] [rows:2  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 17:09:45.855 [DEBU] {c8a95ccb92664a181676cb1581ff6eb4} [  4 ms] [default] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2025-06-19 17:09:45.867 [DEBU] {c8a95ccb92664a181676cb1581ff6eb4} [ 10 ms] [default] [rows:1  ] INSERT INTO `position_info`(`goods_name`,`goods_id`,`sort`,`pic_url`,`link`,`updated_at`,`created_at`) VALUES('IPhone16Pro',1,0,'http://baidu.com','http://alibaba.com','2025-06-19 17:09:45','2025-06-19 17:09:45') 
+2025-06-19 17:18:09.754 [DEBU] {787d561e08674a181776cb15eae420d7} [  1 ms] [default] [rows:0  ] [txid:1] BEGIN
+2025-06-19 17:18:09.757 [DEBU] {787d561e08674a181776cb15eae420d7} [  2 ms] [default] [rows:0  ] [txid:1] UPDATE `position_info` SET `link`='http://alibaba.com',`goods_name`='Pura 80 Pro',`goods_id`=1,`sort`=0,`updated_at`='2025-06-19 17:18:09',`pic_url`='http://tencent.com' WHERE (`id`=1) AND `deleted_at` IS NULL
+2025-06-19 17:18:09.758 [DEBU] {787d561e08674a181776cb15eae420d7} [  1 ms] [default] [rows:0  ] [txid:1] COMMIT
+2025-06-19 17:18:32.214 [DEBU] {902119590d674a181876cb1565863d0f} [  0 ms] [default] [rows:0  ] [txid:2] BEGIN
+2025-06-19 17:18:32.216 [DEBU] {902119590d674a181876cb1565863d0f} [  1 ms] [default] [rows:1  ] [txid:2] UPDATE `position_info` SET `sort`=0,`pic_url`='http://tencent.com',`updated_at`='2025-06-19 17:18:32',`link`='http://alibaba.com',`goods_name`='Pura 80 Pro',`goods_id`=1 WHERE (`id`=3) AND `deleted_at` IS NULL
+2025-06-19 17:18:32.217 [DEBU] {902119590d674a181876cb1565863d0f} [  1 ms] [default] [rows:0  ] [txid:2] COMMIT
+2025-06-19 18:12:47.121 [DEBU] {78196e30036a4a189d78e04397593b64} [  3 ms] [default] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2025-06-19 18:12:47.125 [DEBU] {78196e30036a4a189d78e04397593b64} [  3 ms] [default] [rows:1  ] INSERT INTO `position_info`(`goods_name`,`sort`,`updated_at`,`goods_id`,`created_at`,`pic_url`,`link`) VALUES('IPhone16Pro',0,'2025-06-19 18:12:47',1,'2025-06-19 18:12:47','http://baidu.com','http://alibaba.com') 
+2025-06-19 18:26:59.629 [DEBU] {880db2adc96a4a18e4a15514ed4100d9} [  6 ms] [default] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2025-06-19 18:26:59.632 [DEBU] {880db2adc96a4a18e4a15514ed4100d9} [  2 ms] [default] [rows:1  ] INSERT INTO `position_info`(`link`,`goods_name`,`created_at`,`sort`,`pic_url`,`goods_id`,`updated_at`) VALUES('http://alibaba.com','IPhone16Pro','2025-06-19 18:26:59',0,'http://baidu.com',1,'2025-06-19 18:26:59') 
+2025-06-19 18:27:12.037 [DEBU] {9879a491cc6a4a18e5a15514f411a646} [  1 ms] [default] [rows:0  ] [txid:1] BEGIN
+2025-06-19 18:27:12.039 [DEBU] {9879a491cc6a4a18e5a15514f411a646} [  1 ms] [default] [rows:1  ] [txid:1] UPDATE `position_info` SET `pic_url`='http://tencent.com',`updated_at`='2025-06-19 18:27:12',`link`='http://alibaba.com',`goods_name`='Pura 80 Pro',`goods_id`=1,`sort`=0 WHERE (`id`=5) AND `deleted_at` IS NULL
+2025-06-19 18:27:12.040 [DEBU] {9879a491cc6a4a18e5a15514f411a646} [  1 ms] [default] [rows:0  ] [txid:1] COMMIT
+2025-06-19 18:29:46.894 [DEBU] {c846bb9ff06a4a18e8a15514030fac01} [  2 ms] [default] [rows:3  ] SELECT `id`,`pic_url`,`goods_name`,`link`,`sort`,`goods_id`,`created_at`,`updated_at`,`deleted_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 18:29:46.896 [DEBU] {c846bb9ff06a4a18e8a15514030fac01} [  1 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2025-06-19 18:29:46.897 [DEBU] {c846bb9ff06a4a18e8a15514030fac01} [  1 ms] [default] [rows:3  ] SELECT `id`,`pic_url`,`link`,`sort`,`goods_name`,`goods_id`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 18:30:02.628 [DEBU] {c0b3ad49f46a4a18e9a1551432acd7e7} [  0 ms] [default] [rows:0  ] [txid:2] BEGIN
+2025-06-19 18:30:02.630 [DEBU] {c0b3ad49f46a4a18e9a1551432acd7e7} [  2 ms] [default] [rows:1  ] [txid:2] DELETE FROM `position_info` WHERE `id`=2
+2025-06-19 18:30:02.632 [DEBU] {c0b3ad49f46a4a18e9a1551432acd7e7} [  2 ms] [default] [rows:0  ] [txid:2] COMMIT
+2025-06-19 18:30:40.415 [DEBU] {e86edc15fd6a4a18eaa15514ce319b93} [  2 ms] [default] [rows:3  ] SELECT `id`,`pic_url`,`goods_name`,`link`,`sort`,`goods_id`,`created_at`,`updated_at`,`deleted_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
+2025-06-19 18:30:40.416 [DEBU] {e86edc15fd6a4a18eaa15514ce319b93} [  1 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `position_info` WHERE `deleted_at` IS NULL
+2025-06-19 18:30:40.416 [DEBU] {e86edc15fd6a4a18eaa15514ce319b93} [  0 ms] [default] [rows:3  ] SELECT `id`,`pic_url`,`link`,`sort`,`goods_name`,`goods_id`,`created_at`,`updated_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,20
