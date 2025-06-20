@@ -1,0 +1,14 @@
+2025-06-20 10:07:05.476 [DEBU] {809024ae169e4a18bcd1dd38a8d77c11} [ 41 ms] [default] [rows:8  ] SHOW FULL COLUMNS FROM `admin_info`
+2025-06-20 10:07:05.480 [DEBU] {809024ae169e4a18bcd1dd38a8d77c11} [  3 ms] [default] [rows:1  ] INSERT INTO `admin_info`(`created_at`,`is_admin`,`name`,`user_salt`,`updated_at`,`password`,`role_ids`) VALUES('2025-06-20 10:07:05',1,'leaf','jKOcQlcx59','2025-06-20 10:07:05','d016933a7d955ba95a670d3a8496bf5a','1') 
+2025-06-20 10:08:41.828 [DEBU] {a058821f2d9e4a18bdd1dd389cae4c77} [  1 ms] [default] [rows:0  ] [txid:1] BEGIN
+2025-06-20 10:08:41.833 [DEBU] {a058821f2d9e4a18bdd1dd389cae4c77} [  4 ms] [default] [rows:1  ] [txid:1] UPDATE `admin_info` SET `user_salt`='BVwSrC0rXE',`is_admin`=1,`name`='xfq',`password`='a12bfe3f56b5eba263595fd20a467fa0',`role_ids`='1',`updated_at`='2025-06-20 10:08:41' WHERE `id`=15
+2025-06-20 10:08:41.834 [DEBU] {a058821f2d9e4a18bdd1dd389cae4c77} [  1 ms] [default] [rows:0  ] [txid:1] COMMIT
+2025-06-20 10:09:08.646 [DEBU] {18e10a5e339e4a18bed1dd38520aecaf} [  1 ms] [default] [rows:5  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` LIMIT 0,20
+2025-06-20 10:09:08.648 [DEBU] {18e10a5e339e4a18bed1dd38520aecaf} [  1 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `admin_info`
+2025-06-20 10:09:08.648 [DEBU] {18e10a5e339e4a18bed1dd38520aecaf} [  0 ms] [default] [rows:5  ] SELECT `id`,`name`,`password`,`role_ids`,`is_admin`,`created_at`,`updated_at` FROM `admin_info` LIMIT 0,20
+2025-06-20 10:09:34.286 [DEBU] {684b5756399e4a18bfd1dd38a5c1404c} [  1 ms] [default] [rows:0  ] [txid:2] BEGIN
+2025-06-20 10:09:34.288 [DEBU] {684b5756399e4a18bfd1dd38a5c1404c} [  1 ms] [default] [rows:1  ] [txid:2] DELETE FROM `admin_info` WHERE `id`=3
+2025-06-20 10:09:34.290 [DEBU] {684b5756399e4a18bfd1dd38a5c1404c} [  2 ms] [default] [rows:0  ] [txid:2] COMMIT
+2025-06-20 10:09:39.094 [DEBU] {90bce9743a9e4a18c0d1dd3822c9345d} [  0 ms] [default] [rows:4  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`user_salt`,`is_admin` FROM `admin_info` LIMIT 0,20
+2025-06-20 10:09:39.095 [DEBU] {90bce9743a9e4a18c0d1dd3822c9345d} [  1 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `admin_info`
+2025-06-20 10:09:39.095 [DEBU] {90bce9743a9e4a18c0d1dd3822c9345d} [  0 ms] [default] [rows:4  ] SELECT `id`,`name`,`password`,`role_ids`,`is_admin`,`created_at`,`updated_at` FROM `admin_info` LIMIT 0,20

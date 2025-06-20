@@ -22,6 +22,7 @@ var (
 				group.Bind(
 					controller.Rotation,
 					controller.Position,
+					controller.Admin,
 				)
 			})
 			s.Run()
