@@ -27,9 +27,19 @@ var (
 				group.Bind(
 					controller.Rotation,
 					controller.Position,
-					controller.Admin,
+					controller.Admin.List,
+					controller.Admin.Create,
+					controller.Admin.Update,
+					controller.Admin.Delete,
 					controller.Login,
 				)
+				// Special handler that needs authentication.
+				group.Group("/", func(group *ghttp.RouterGroup) {
+					group.Middleware(service.Middleware().Auth)
+					group.ALLMap(g.Map{
+						"/backend/admin/info": controller.Admin.Info,
+					})
+				})
 			})
 			s.Run()
 			return nil
