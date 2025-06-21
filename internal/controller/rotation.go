@@ -4,6 +4,7 @@ import (
 	"context"
 
 	"GFShop/api/backend"
+	"GFShop/api/frontend"
 	"GFShop/internal/model"
 	"GFShop/internal/service"
 )
@@ -58,4 +59,21 @@ func (a *cRotation) List(ctx context.Context, req *backend.RotationGetListCommon
 		Size:  getListRes.Size,
 		Total: getListRes.Total,
 	}, nil
+}
+
+// 前台的取值方法
+func (a *cRotation) ListFrontend(ctx context.Context, req *frontend.RotationGetListCommonReq) (res *frontend.RotationGetListCommonRes, err error) {
+	getListRes, err := service.Rotation().GetList(ctx, model.RotationGetListInput{
+		Page: req.Page,
+		Size: req.Size,
+		Sort: req.Sort,
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return &frontend.RotationGetListCommonRes{List: getListRes.List,
+		Page:  getListRes.Page,
+		Size:  getListRes.Size,
+		Total: getListRes.Total}, nil
 }
