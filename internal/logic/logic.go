@@ -6,6 +6,10 @@ package logic
 
 import (
 	_ "GFShop/internal/logic/admin"
+	_ "GFShop/internal/logic/bizctx"
+	_ "GFShop/internal/logic/login"
+	_ "GFShop/internal/logic/middleware"
 	_ "GFShop/internal/logic/position"
 	_ "GFShop/internal/logic/rotation"
+	_ "GFShop/internal/logic/session"
 )
