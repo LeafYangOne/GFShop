@@ -4,6 +4,8 @@ import (
 	"time"
 
 	"github.com/gogf/gf/v2/frame/g"
+
+	"GFShop/internal/model/entity"
 )
 
 type LoginDoReq struct {
@@ -17,10 +19,21 @@ type LoginDoRes struct {
 	Token  string    `json:"token"`
 	Expire time.Time `json:"expire"`
 }
-type RefreshTokenReq struct {
-	g.Meta `path:"/backend/refresh_token" method:"post"`
-}
 
+// for jwt
+// type RefreshTokenReq struct {
+// 	g.Meta `path:"/backend/refresh_token" method:"post"`
+// }
+
+// LoginRes for token
+type LoginRes struct {
+	Type        string                  `json:"type"`
+	Token       string                  `json:"token"`
+	ExpireIn    int                     `json:"expire_in"`
+	IsAdmin     int                     `json:"is_admin"`    //是否超管
+	RoleIds     string                  `json:"role_ids"`    //角色
+	Permissions []entity.PermissionInfo `json:"permissions"` //权限列表
+}
 type RefreshTokenRes struct {
 	Token  string    `json:"token"`
 	Expire time.Time `json:"expire"`

@@ -24,11 +24,11 @@ type CategoryInfoColumns struct {
 	ParentId  string // 父级id
 	Name      string //
 	PicUrl    string // icon
-	Level     string // 等级 默认1级分类
-	Sort      string //
+	DeletedAt string //
 	CreatedAt string //
 	UpdatedAt string //
-	DeletedAt string //
+	Level     string // 等级 默认1级分类
+	Sort      string //
 }
 
 // categoryInfoColumns holds the columns for table category_info.
@@ -37,11 +37,11 @@ var categoryInfoColumns = CategoryInfoColumns{
 	ParentId:  "parent_id",
 	Name:      "name",
 	PicUrl:    "pic_url",
-	Level:     "level",
-	Sort:      "sort",
+	DeletedAt: "deleted_at",
 	CreatedAt: "created_at",
 	UpdatedAt: "updated_at",
-	DeletedAt: "deleted_at",
+	Level:     "level",
+	Sort:      "sort",
 }
 
 // NewCategoryInfoDao creates and returns a new DAO object for table data access.
